@@ -10,6 +10,8 @@
 	<modules>
 		<module>meviews.common</module>
 		<module>meviews.web</module>
+		<module>meviews.presentation.api</module>
+		<module>meviews.presentation.impl</module>
 	</modules>
 
 	<build>
