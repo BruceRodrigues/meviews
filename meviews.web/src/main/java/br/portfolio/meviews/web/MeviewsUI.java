@@ -2,14 +2,16 @@ package br.portfolio.meviews.web;
 
 import javax.servlet.annotation.WebServlet;
 
+import br.portfolio.meviews.presentation.impl.home.HomePresenterImpl;
+import br.portfolio.meviews.view.impl.home.HomeViewImpl;
+import br.portfolio.meviews.view.impl.navigator.Navigator;
+import br.portfolio.meviews.view.impl.topbar.TopBarViewImpl;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -21,21 +23,38 @@ public class MeviewsUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
-		final VerticalLayout layout = new VerticalLayout();
-		layout.setMargin(true);
-		this.setContent(layout);
 
-		Button button = new Button("Click Me");
-		button.addClickListener(new Button.ClickListener() {
+		Navigator.getMainContent().removeAllComponents();
 
-			private static final long serialVersionUID = 1L;
+		this.setContent(Navigator.getMainContent());
 
-			@Override
-			public void buttonClick(ClickEvent event) {
-				layout.addComponent(new Label("Thank you for clicking"));
-			}
-		});
-		layout.addComponent(button);
+		VerticalLayout root = new VerticalLayout();
+		TopBarViewImpl topBar = new TopBarViewImpl();
+
+		Navigator.setTopBar(topBar);
+		Navigator.setRoot(root);
+
+		HomePresenterImpl homePresenter = new HomePresenterImpl();
+		HomeViewImpl homeView = new HomeViewImpl();
+		homePresenter.setView(homeView);
+
+		Navigator.navigate(homePresenter);
+
+		// final VerticalLayout layout = new VerticalLayout();
+		// layout.setMargin(true);
+		// this.setContent(layout);
+		//
+		// Button button = new Button("Click Me");
+		// button.addClickListener(new Button.ClickListener() {
+		//
+		// private static final long serialVersionUID = 1L;
+		//
+		// @Override
+		// public void buttonClick(ClickEvent event) {
+		// layout.addComponent(new Label("Thank you for clicking"));
+		// }
+		// });
+		// layout.addComponent(button);
 
 	}
 

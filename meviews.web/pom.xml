@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>meviews.web</artifactId>
@@ -64,20 +65,22 @@
 			<artifactId>vaadin-client</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<!--
-		  Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
-		  
-		  For widgetset compilation, vaadin-client-compiler is automatically added on the
-		  compilation classpath by vaadin-maven-plugin so normally there is no need for an
-		  explicit dependency.
-		-->
-		<!--
 		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiler</artifactId>
-			<scope>provided</scope>
+			<groupId>br.portfolio</groupId>
+			<artifactId>meviews.view.impl</artifactId>
+			<version>1.0</version>
 		</dependency>
-		-->
+		<dependency>
+			<groupId>br.portfolio</groupId>
+			<artifactId>meviews.presentation.impl</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory). 
+			For widgetset compilation, vaadin-client-compiler is automatically added 
+			on the compilation classpath by vaadin-maven-plugin so normally there is 
+			no need for an explicit dependency. -->
+		<!-- <dependency> <groupId>com.vaadin</groupId> <artifactId>vaadin-client-compiler</artifactId> 
+			<scope>provided</scope> </dependency> -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
@@ -127,8 +130,8 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>update-widgetset</goal>
-							<goal>compile</goal>
+							<!-- <goal>update-widgetset</goal> -->
+							<!-- <goal>compile</goal> -->
 							<!-- disabled by default to use on-the-fly theme compilation -->
 							<!-- <goal>compile-theme</goal> -->
 						</goals>
@@ -158,21 +161,22 @@
 				</configuration>
 			</plugin>
 
-			<!-- The Jetty plugin allows us to easily test the development build by
+			<!-- The Jetty plugin allows us to easily test the development build by 
 				running jetty:run on the command line. -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.plugin.version}</version>
 				<configuration>
-				    <scanIntervalSeconds>2</scanIntervalSeconds>
+					<scanIntervalSeconds>2</scanIntervalSeconds>
 				</configuration>
 			</plugin>
 		</plugins>
 
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<!-- TODO Remove when http://dev.vaadin.com/ticket/14924 is resolved -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
@@ -190,9 +194,9 @@
 										<versionRange>[7.1.11,)</versionRange>
 										<goals>
 											<goal>resources</goal>
-											<goal>update-widgetset</goal>
-											<goal>compile</goal>
-											<goal>compile-theme</goal>
+											<!-- <goal>update-widgetset</goal> -->
+											<!-- <goal>compile</goal> -->
+											<!-- <goal>compile-theme</goal> -->
 										</goals>
 									</pluginExecutionFilter>
 									<action>
