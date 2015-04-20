@@ -1,0 +1,2 @@
+# Module br.portfolio.meviews.web.MeviewsWidgetset
+# RPC service class, partial path of RPC policy file
