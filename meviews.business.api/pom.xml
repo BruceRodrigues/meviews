@@ -6,13 +6,24 @@
 		<artifactId>meviews</artifactId>
 		<version>1.0</version>
 	</parent>
-  <artifactId>meviews.business.api</artifactId>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>br.portfolio</groupId>
-  		<artifactId>meviews.common</artifactId>
-  		<version>1.0</version>
-  	</dependency>
-  </dependencies>
+	<artifactId>meviews.business.api</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>br.portfolio</groupId>
+			<artifactId>meviews.common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+			<version>1.0.2.Final-redhat-2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+			<version>1.0.2.Final</version>
+		</dependency>
+	</dependencies>
 </project>

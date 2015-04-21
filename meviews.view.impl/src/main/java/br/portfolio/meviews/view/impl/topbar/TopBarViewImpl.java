@@ -19,6 +19,8 @@ public class TopBarViewImpl extends CustomComponent {
 		home.setIcon(FontAwesome.HOME);
 		Button movies = new Button("Movies");
 		movies.setIcon(FontAwesome.APPLE);
+		Button upload = new Button("Upload");
+		upload.setIcon(FontAwesome.UPLOAD);
 
 		HorizontalLayout topBar = new HorizontalLayout();
 		topBar.setWidthUndefined();
@@ -27,6 +29,7 @@ public class TopBarViewImpl extends CustomComponent {
 
 		topBar.addComponent(home);
 		topBar.addComponent(movies);
+		topBar.addComponent(upload);
 
 		this.setCompositionRoot(topBar);
 

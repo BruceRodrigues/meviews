@@ -8,16 +8,12 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 
-public class HomeViewImpl extends BaseViewImpl<HomePresenter> implements
-		HomeView {
+public class HomeViewImpl extends BaseViewImpl<HomePresenter> implements HomeView {
 
 	private static final long serialVersionUID = 1L;
 
-	public HomeViewImpl() {
-		this.init();
-	}
-
-	private void init() {
+	@Override
+	protected void init() {
 		Button home = new Button("teste");
 
 		HorizontalLayout topBar = new HorizontalLayout();

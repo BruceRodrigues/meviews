@@ -17,6 +17,9 @@
         <dependent-module archiveName="lombok-1.16.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/projectlombok/lombok/1.16.2/lombok-1.16.2.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="jboss-ejb-api_3.1_spec-1.0.2.Final.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final/jboss-ejb-api_3.1_spec-1.0.2.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="meviews.persistense-1.0.jar" deploy-path="/lib" handle="module:/resource/meviews.persistense/meviews.persistense">
             <dependency-type>uses</dependency-type>
         </dependent-module>

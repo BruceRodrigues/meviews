@@ -75,6 +75,16 @@
 			<artifactId>meviews.presentation.impl</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-cdi</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory). 
 			For widgetset compilation, vaadin-client-compiler is automatically added 
 			on the compilation classpath by vaadin-maven-plugin so normally there is 

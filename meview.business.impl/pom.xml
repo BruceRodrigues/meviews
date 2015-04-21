@@ -6,24 +6,24 @@
 		<artifactId>meviews</artifactId>
 		<version>1.0</version>
 	</parent>
-  <artifactId>meviews.business.impl</artifactId>
-  <packaging>ejb</packaging>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>br.portfolio</groupId>
-  		<artifactId>meviews.business.api</artifactId>
-  		<version>1.0</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>br.portfolio</groupId>
-  		<artifactId>meviews.persistense</artifactId>
-  		<version>1.0</version>
-  	</dependency>
-  </dependencies>
-  
-  <build>
-  	<plugins>
+	<artifactId>meviews.business.impl</artifactId>
+	<packaging>ejb</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>br.portfolio</groupId>
+			<artifactId>meviews.business.api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>br.portfolio</groupId>
+			<artifactId>meviews.persistense</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
@@ -47,6 +47,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 			</plugin>
-	</plugins>
-  </build>
+		</plugins>
+	</build>
 </project>

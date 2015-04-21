@@ -6,10 +6,10 @@
 		<artifactId>meviews</artifactId>
 		<version>1.0</version>
 	</parent>
-  <artifactId>meviews.persistense</artifactId>
-  
-  <dependencies>
-  		<dependency>
+	<artifactId>meviews.persistense</artifactId>
+
+	<dependencies>
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
 			<version>4.3.0.Final</version>
@@ -25,9 +25,38 @@
 			<version>3.6.3</version>
 		</dependency>
 		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>3.6.3</version>
+		</dependency>
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-envers</artifactId>
 			<version>4.2.0.Final-redhat-1</version>
 		</dependency>
-  </dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<version>1.0.9</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/generated-sources/java</outputDirectory>
+							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+							<options>
+								<querydsl.entityAccessors>true</querydsl.entityAccessors>
+							</options>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -5,8 +5,7 @@ import br.portfolio.meviews.presentation.api.base.BaseView;
 
 import com.vaadin.ui.VerticalLayout;
 
-public class BaseViewImpl<PRESENTER extends BasePresenter<?>> extends
-		VerticalLayout implements BaseView {
+public class BaseViewImpl<PRESENTER extends BasePresenter<?>> extends VerticalLayout implements BaseView<PRESENTER> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,10 +15,10 @@ public class BaseViewImpl<PRESENTER extends BasePresenter<?>> extends
 		this.init();
 	}
 
-	private void init() {
-
+	protected void init() {
 	}
 
+	@Override
 	public void setPresenter(PRESENTER presenter) {
 		this.presenter = presenter;
 	}

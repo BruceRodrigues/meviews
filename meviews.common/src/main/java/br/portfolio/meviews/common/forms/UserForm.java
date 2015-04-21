@@ -12,6 +12,8 @@ public class UserForm implements Serializable {
 
 	private static final long serialVersionUID = -7323376488708274880L;
 
+	private int id;
+
 	private String name;
 
 	private String email;
